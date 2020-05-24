@@ -1,13 +1,13 @@
 {
     "name": "topthink/think",
-    "description": "the new thinkphp framework",
+    "description": "tp6ToApi",
     "type": "project",
     "keywords": [
         "framework",
         "thinkphp",
         "ORM"
     ],
-    "homepage": "http://thinkphp.cn/",
+    "homepage": "http://28yanyu.cn/",
     "license": "Apache-2.0",
     "authors": [
         {
