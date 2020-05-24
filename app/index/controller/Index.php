@@ -7,7 +7,6 @@ namespace app\index\controller;
 use app\common\lib\curl\BaseCurl;
 use app\common\lib\curl\MutilCurl;
 use app\common\lib\jwt\JwtAuth;
-use app\common\lib\wechatApi\facade\BaseWechatApi;
 use app\common\validate\UserValidate;
 use think\facade\Queue;
 
