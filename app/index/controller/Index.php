@@ -14,7 +14,7 @@ use think\facade\Queue;
 class Index
 {
     public function index(){
-        return "测试";
+        return "index";
     }
 
     public function wechat(){
