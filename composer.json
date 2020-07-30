@@ -7,7 +7,7 @@
         "thinkphp",
         "ORM"
     ],
-    "homepage": "http://thinkphp.cn/",
+    "homepage": "http://www.28yanyu.cn",
     "license": "Apache-2.0",
     "authors": [
         {
@@ -17,13 +17,22 @@
         {
             "name": "yunwuxin",
             "email": "448901948@qq.com"
-        }        
+        },
+        {
+            "name": "aibayanyu",
+            "email": "aibayanyu@qq.com"
+        }
     ],
     "require": {
         "php": ">=7.1.0",
         "topthink/framework": "^6.0.0",
         "topthink/think-orm": "^2.0",
-        "topthink/think-multi-app": "^1.0"
+        "topthink/think-multi-app": "^1.0",
+        "topthink/think-queue": "^3.0",
+        "topthink/think-swoole": "^3.0",
+        "firebase/php-jwt": "^5.2",
+        "aibayanyu/tp-rsa": "^1.1",
+        "topthink/think-ide-helper": "^1.0"
     },
     "require-dev": {
         "symfony/var-dumper": "^4.2",
