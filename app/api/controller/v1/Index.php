@@ -12,6 +12,6 @@ use app\common\BaseController;
 class Index extends BaseController
 {
     public function index(){
-//        apiError(0);
+        apiError(0);
     }
 }

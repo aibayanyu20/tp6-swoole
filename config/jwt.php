@@ -6,5 +6,5 @@
 return [
     // 超时时间
     'expire'=>7200,
-    'secret'=>''
+    'secret'=>'ce3f8fb42d6bd4f0c7af26142219fbc90'
 ];
