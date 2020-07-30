@@ -13,5 +13,7 @@ class SocketMessage
     public function handle($event)
     {
         //
+        $ws = app('\think\swoole\Websocket');
+        dump($event);
     }    
 }
