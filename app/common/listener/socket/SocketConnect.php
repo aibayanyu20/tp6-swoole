@@ -1,7 +1,7 @@
 <?php
 declare (strict_types = 1);
 
-namespace app\common\listener;
+namespace app\common\listener\socket;
 
 class SocketConnect
 {

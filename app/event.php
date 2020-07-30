@@ -1,8 +1,8 @@
 <?php
 // 事件定义文件
-use app\common\listener\SocketClose;
-use app\common\listener\SocketConnect;
-use app\common\listener\SocketMessage;
+use app\common\listener\socket\SocketClose;
+use app\common\listener\socket\SocketConnect;
+use app\common\listener\socket\SocketMessage;
 
 return [
     'bind'      => [
@@ -22,6 +22,9 @@ return [
         ],
         'swoole.websocket.Message'=>[
             SocketMessage::class
+        ],
+        'swoole.task'=>[
+
         ]
     ],
 
