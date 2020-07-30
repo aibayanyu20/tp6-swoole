@@ -3,6 +3,7 @@
 use app\common\listener\socket\SocketClose;
 use app\common\listener\socket\SocketConnect;
 use app\common\listener\socket\SocketMessage;
+use app\common\listener\task\SwooleTask;
 
 return [
     'bind'      => [
@@ -24,7 +25,7 @@ return [
             SocketMessage::class
         ],
         'swoole.task'=>[
-
+            SwooleTask::class
         ]
     ],
 

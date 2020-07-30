@@ -12,6 +12,8 @@ use app\common\BaseController;
 class Index extends BaseController
 {
     public function index(){
-        return "tp-swoole项目初始化";
+        $this->manager->getServer()->task([
+            'data'=>'你好'
+        ]);
     }
 }

@@ -17,9 +17,10 @@ class SwooleTask
     public function handle($event)
     {
        // 事件分发判断当前的事件属于哪一类分发至对应的事件机制中
-        if (isset($event['action'])&&isset($event['data'])) {
-            $data = $event['data'];
-            switch ($event['action']) {
+        $e = $event->data;
+        if (isset($e['action'])&&isset($e['data'])) {
+            $data = $e['data'];
+            switch ($e['action']) {
                 case "sms":
                     event(SendSms::class, $data);
                     dump("分发至短信");
@@ -32,7 +33,7 @@ class SwooleTask
                     dump("未知的任务");
             }
         }else{
-            dump($event);
+            dump($e);
         }
     }
 }
