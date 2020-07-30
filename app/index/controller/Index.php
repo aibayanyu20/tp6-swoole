@@ -8,11 +8,10 @@ namespace app\index\controller;
 
 
 use app\common\BaseController;
-use think\helper\Str;
 
 class Index extends BaseController
 {
     public function index(){
-        return md5(Str::random(32));
+        return "tp-swoole项目初始化";
     }
 }
