@@ -29,12 +29,14 @@ class AdRoles extends Migrator
     public function change()
     {
         $table = $this->table("roles");
-           $table->addColumn("name","string",['default'=>'','limit'=>30,'comment'=>'当前的规则名称'])
-            ->addColumn('parent_id','integer',['default'=>0,'comment'=>'当前规则的父级'])
-            ->addColumn('description','string',['default'=>'','limit'=>100,'comment'=>'描述当前的权限信息'])
-            ->addColumn('data_role','integer',['default'=>0,'limit'=>2,'comment'=>'当前权限对应的数据权限'])
-            ->addColumn('create_time','integer',['default'=>0,'comment'=>'创建时间'])
-            ->addColumn('update_time','integer',['default'=>0,'comment'=>'更新时间'])
-            ->create();
+           $table
+               ->addColumn("title","string",['default'=>'','limit'=>30,'comment'=>'当前的规则名称'])
+               ->addColumn("name","string",['default'=>'','limit'=>30,'comment'=>'当前规则的类型'])
+               ->addColumn('parent_id', 'integer', ['default' => 0, 'comment' => '当前规则的父级'])
+               ->addColumn('description', 'string', ['default' => '', 'limit' => 100, 'comment' => '描述当前的权限信息'])
+               ->addColumn('data_role', 'integer', ['default' => 0, 'limit' => 2, 'comment' => '当前权限对应的数据权限'])
+               ->addColumn('create_time', 'integer', ['default' => 0, 'comment' => '创建时间'])
+               ->addColumn('update_time', 'integer', ['default' => 0, 'comment' => '更新时间'])
+               ->create();
     }
 }
