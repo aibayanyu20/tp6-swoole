@@ -31,7 +31,7 @@ class AdRoles extends Migrator
         $table = $this->table("roles");
            $table
                ->addColumn("title","string",['default'=>'','limit'=>30,'comment'=>'当前的规则名称'])
-               ->addColumn("name","string",['default'=>'','limit'=>30,'comment'=>'当前规则的类型'])
+               ->addColumn('name',"string",['default'=>'','limit'=>30,'comment'=>'当前规则的英文名称与规则相对应'])
                ->addColumn('parent_id', 'integer', ['default' => 0, 'comment' => '当前规则的父级'])
                ->addColumn('description', 'string', ['default' => '', 'limit' => 100, 'comment' => '描述当前的权限信息'])
                ->addColumn('data_role', 'integer', ['default' => 0, 'limit' => 2, 'comment' => '当前权限对应的数据权限'])

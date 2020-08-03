@@ -3,7 +3,7 @@
 use think\migration\Migrator;
 use think\migration\db\Column;
 
-class AdPermissions extends Migrator
+class AdMenusHasRoles extends Migrator
 {
     /**
      * Change Method.
@@ -28,9 +28,11 @@ class AdPermissions extends Migrator
      */
     public function change()
     {
-        $table = $this->table("table");
+        $table = $this->table("menu_role");
         $table
-            ->addColumn('')
+            ->addColumn('menu_id','integer',['default'=>0,'comment'=>'菜单id'])
+            ->addColumn('role_id','integer',['default'=>0,'comment'=>'角色id'])
+            ->addColumn('create_time','integer',['default'=>0,'comment'=>'创建时间'])
             ->create();
     }
 }
