@@ -30,6 +30,7 @@ class AdRolesUpdate1 extends Migrator
     {
         $table = $this->table("roles");
             $table
+                // 添加备注信息
                 ->addColumn("remark",'string',['default'=>'','limit'=>255,'comment'=>'备注信息'])
             ->update();
     }
