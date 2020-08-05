@@ -7,12 +7,11 @@ use Firebase\JWT\BeforeValidException;
 use Firebase\JWT\ExpiredException;
 use Firebase\JWT\JWT;
 use Firebase\JWT\SignatureInvalidException;
-use think\facade\Cache;
 
 class JwtAuth
 {
     // 密钥
-    private $secret = "aibayanyu";
+    private $secret = "helloWord";
 
     // 延迟生效时间
     private  $delay = 0;
@@ -71,11 +70,5 @@ class JwtAuth
             // 未知错误
             apiError(10001,"服务器出错");
         }
-    }
-
-    // 清除token
-    public function removeAuth($token){
-        Cache::delete($token);
-        return true;
     }
 }
