@@ -3,6 +3,7 @@ declare (strict_types=1);
 
 namespace app\common;
 
+use app\Request;
 use think\App;
 use think\exception\ValidateException;
 use think\swoole\Manager;
@@ -17,7 +18,7 @@ abstract class BaseController
 {
     /**
      * Request实例
-     * @var \think\Request
+     * @var Request
      */
     protected $request;
 

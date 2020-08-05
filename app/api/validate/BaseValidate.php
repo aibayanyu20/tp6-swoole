@@ -32,7 +32,7 @@ class BaseValidate extends Validate
             $valid = $this->scene($scene)->check($params);
         }
         // 数据验证器
-        if (!$valid) apiError($this->getError());
+        if (!$valid) apiError(0,$this->getError());
         // 验证通过
         return true;
     }
