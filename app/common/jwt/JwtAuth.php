@@ -73,31 +73,6 @@ class JwtAuth
         }
     }
 
-    public function checkSocketToken($token){
-        try {
-            $data = JWT::decode($token,$this->secret,array('HS256'));
-            if (isset($data->data)){
-                return (array)$data->data;
-            }
-            return [];
-        }catch (SignatureInvalidException $e){
-//            apiError("签名不正确");
-            return "签名不正确";
-        }catch (BeforeValidException $e){
-            // 签名还未生效
-//            apiError('token无效');
-            return "token无效";
-        }catch (ExpiredException $e){
-            // 过期
-//            apiError("token已过期");
-            return "token已过期";
-        }catch (\Exception $e){
-            // 未知错误
-//            apiError("服务器出错");
-            return "服务器出错";
-        }
-    }
-
     // 清除token
     public function removeAuth($token){
         Cache::delete($token);
