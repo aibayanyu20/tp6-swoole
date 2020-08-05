@@ -25,7 +25,8 @@ class CheckJwtAuth
         if (empty($token)) apiError(10000);
         // 验证token是否可以正常使用
         $auth = new JwtAuth();
-        $auth->checkToken($token);
+        $data = $auth->checkToken($token);
+        $request->userId = $data['id'];
         return $next($request);
     }
 }

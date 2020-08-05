@@ -18,5 +18,8 @@ use app\common\BaseController;
  */
 class User extends BaseController
 {
-
+    // 获取用户的基本信息
+    public function getUserInfo(){
+        halt($this->request->getUserRole());
+    }
 }
