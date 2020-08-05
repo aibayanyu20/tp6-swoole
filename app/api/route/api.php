@@ -5,4 +5,7 @@
  */
 use think\facade\Route;
 
-Route::any(':v/:controller/:method',":v.:controller/:method")->middleware(['checkAuth']);
+/**
+ * 所有路由走全部都走这个
+ */
+Route::any(':v/:controller/:action',":v.:controller/:action")->middleware(['checkAuth']);
