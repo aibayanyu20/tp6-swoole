@@ -36,7 +36,7 @@ class AdMenus extends Migrator
             ->addColumn('creator_id', 'integer', ['default' => 0, 'comment' => '当前创建菜单的用户id'])
             ->addColumn('component','string',['default'=>'','comment'=>'菜单组件','limit'=>30])
             ->addColumn('path','string',['default'=>'','comment'=>'菜单路径，如果不存在路径需要通过component生成路径','limit'=>30])
-            ->addColumn('r_id','boolean',['default'=>0,'comment'=>'可以被用户访问的权限','limit'=>1])
+            ->addColumn('r_id','integer',['default'=>0,'comment'=>'可以被用户访问的权限'])
             ->addColumn('icon','string',['default'=>'','comment'=>'图标配置项','limit'=>30])
             ->addColumn('type','boolean',['default'=>0,'comment'=>'菜单类型【0】为菜单【1】为子菜单','limit'=>1])
             ->addColumn('status','boolean',['default'=>0,'comment'=>'菜单状态','limit'=>1])
