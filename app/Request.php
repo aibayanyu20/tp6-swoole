@@ -5,6 +5,10 @@ namespace app;
 class Request extends \think\Request
 {
     public function getIp():string{
-        return $this->server("HTTP_X_REAL_IP","0.0.0.0");
+        $ip = $this->ip();
+        if($ip == '127.0.0.1'){
+            return $this->server("HTTP_X_REAL_IP","0.0.0.0");
+        }
+        return $ip;
     }
 }

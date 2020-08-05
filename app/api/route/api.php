@@ -10,7 +10,7 @@ use think\facade\Route;
  */
 Route::group(":v",function (){
     // 登录界面
-    Route::get('/login',':v.Login/login');
+    Route::post('/login',':v.Login/login');
 });
 
 

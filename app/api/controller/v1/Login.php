@@ -15,7 +15,6 @@ use app\common\model\Users;
 class Login extends BaseController
 {
     public function login(UserValidate $userValidate,Users $users){
-        halt($this->request->getIp());
         // 登录账号
         $userValidate->goCheck('login');
         // 验证通过，判断当前的账号密码是否正确
