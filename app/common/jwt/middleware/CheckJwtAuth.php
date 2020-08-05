@@ -6,7 +6,7 @@ namespace app\common\jwt\middleware;
 use app\common\exception\ApiException;
 use app\common\jwt\JwtAuth;
 use Closure;
-use think\Request;
+use app\Request;
 
 class CheckJwtAuth
 {

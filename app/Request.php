@@ -20,6 +20,7 @@ class Request extends \think\Request
     public function getUserRole(){
         if ($this->userId){
             // 拿到当前的用户的id
+            return $this->userId;
         }
     }
 }
