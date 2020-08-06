@@ -69,4 +69,5 @@ class User extends BaseController
         // 获取菜单成功
         return apiSuccess("ok",$menusInfo);
     }
+
 }
