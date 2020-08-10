@@ -61,13 +61,20 @@ class User extends BaseController
         $role_id = $this->request->getUserRole();
         // 获取菜单
         if ($role_id['id'] == 1){
-            $menusInfo = $menus->withoutField("update_time,create_time")->order("sort","DESC")->select();
+            $menusInfo = $menus->withoutField("update_time,create_time")
+                ->order("sort","DESC")->select();
         }else{
-            $menusRoles = $menuRole->where("role_id",$role_id['id'])->column("menu_id");
-            $menusInfo = $menus->withoutField("update_time,create_time")->order("sort","DESC")->whereIn("id",$menusRoles)->select();
+            $menusRoles = $menuRole->where("role_id",$role_id['id'])
+                ->column("menu_id");
+            $menusInfo = $menus->withoutField("update_time,create_time")
+                ->order("sort","DESC")
+                ->whereIn("id",$menusRoles)->select();
         }
         // 获取菜单成功
         return apiSuccess("ok",$menusInfo);
     }
 
+    /***
+     * 根据菜单获取数据信息
+     */
 }

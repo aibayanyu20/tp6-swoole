@@ -14,7 +14,6 @@ class Index extends BaseController
 {
     public function index()
     {
-        halt($this->request->getIp());
 //        $this->manager->getServer()->task([
 //            'data'=>'你好'
 //        ]);
