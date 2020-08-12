@@ -35,16 +35,17 @@ class User extends BaseController
      * @throws ModelNotFoundException
      * @author loster
      */
-    public function getUserInfo(Users $users){
+    public function getUserInfo(Users $users)
+    {
         // 获取数据信息
         $roleInfo = $this->request->getUserRole();
         // 获取用户的基本信息
-        $userinfo = $users->where("id",$this->request->userId)
+        $userinfo = $users->where("id", $this->request->userId)
             ->withoutField("password,delete_time,update_time")
             ->find()->toArray();
         $userinfo['role'] = $roleInfo['name'];
         // 获取数据成功
-        return apiSuccess("ok",$userinfo);
+        return apiSuccess("ok", $userinfo);
     }
 
     /**
@@ -56,25 +57,28 @@ class User extends BaseController
      * @throws DbException
      * @throws ModelNotFoundException
      */
-    public function getRoleList(Menus $menus,MenuRole $menuRole){
+    public function getMenuList(Menus $menus, MenuRole $menuRole)
+    {
         // 获取菜单信息
         $role_id = $this->request->getUserRole();
         // 获取菜单
-        if ($role_id['id'] == 1){
+        if ($role_id['id'] == 1) {
             $menusInfo = $menus->withoutField("update_time,create_time")
-                ->order("sort","DESC")->select();
-        }else{
-            $menusRoles = $menuRole->where("role_id",$role_id['id'])
+                ->with(['role' => function ($query) {
+                    $query->field('name,id');
+                }])
+                ->order("sort", "DESC")->select();
+        } else {
+            $menusRoles = $menuRole->where("role_id", $role_id['id'])
                 ->column("menu_id");
             $menusInfo = $menus->withoutField("update_time,create_time")
-                ->order("sort","DESC")
-                ->whereIn("id",$menusRoles)->select();
+                ->order("sort", "DESC")
+                ->with(['role' => function ($query) {
+                    $query->field('name,id');
+                }])
+                ->whereIn("id", $menusRoles)->select();
         }
         // 获取菜单成功
-        return apiSuccess("ok",$menusInfo);
+        return apiSuccess("ok", $menusInfo);
     }
-
-    /***
-     * 根据菜单获取数据信息
-     */
 }

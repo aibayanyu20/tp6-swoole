@@ -10,4 +10,7 @@ namespace app\common\model;
 class Menus extends BaseModel
 {
     // 菜单模型
+    public function role(){
+        return $this->hasOne('Roles',"id","r_id");
+    }
 }
