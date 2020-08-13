@@ -56,7 +56,56 @@ return [
             // 字段缓存路径
             'schema_cache_path' => app()->getRuntimePath() . 'schema' . DIRECTORY_SEPARATOR,
         ],
-
+        'mongo' => [
+            // 数据库类型
+            'type'            => 'mongo',
+            // 服务器地址
+            'hostname'        => '39.100.140.73',
+            // 数据库名
+            'database'        => 'dmpv1',
+            // 是否是复制集
+            'is_replica_set'  => false,
+            // 用户名
+            'username'        => '',
+            // 密码
+            'password'        => '',
+            // 端口
+            'hostport'        => 27000,
+            // 连接dsn
+            'dsn'             => '',
+            // 数据库连接参数
+            'params'          => [],
+            // 数据库编码默认采用utf8
+            'charset'         => 'utf8',
+            // 主键名
+            'pk'              => '_id',
+            // 主键类型
+            'pk_type'         => 'ObjectID',
+            // 数据库表前缀
+            'prefix'          => 'dmp_',
+            // 数据库部署方式:0 集中式(单一服务器),1 分布式(主从服务器)
+            'deploy'          => 0,
+            // 数据库读写是否分离 主从式有效
+            'rw_separate'     => false,
+            // 读写分离后 主服务器数量
+            'master_num'      => 1,
+            // 指定从服务器序号
+            'slave_no'        => '',
+            // 是否严格检查字段是否存在
+            'fields_strict'   => true,
+            // 开启字段缓存
+            'fields_cache'    => false,
+            // 监听SQL
+            'trigger_sql'     => true,
+            // 自动写入时间戳字段
+            'auto_timestamp'  => false,
+            // 时间字段取出后的默认时间格式
+            'datetime_format' => 'Y-m-d H:i:s',
+            // 是否_id转换为id
+            'pk_convert_id'   => false,
+            // typeMap
+            'type_map'        => ['root' => 'array', 'document' => 'array'],
+        ]
         // 更多的数据库配置信息
     ],
 ];
