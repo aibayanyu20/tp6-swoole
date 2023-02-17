@@ -29,7 +29,7 @@
         "topthink/think-orm": "^2.0",
         "topthink/think-multi-app": "^1.0",
         "topthink/think-queue": "^3.0",
-        "firebase/php-jwt": "^5.2",
+        "firebase/php-jwt": "^6.0",
         "aibayanyu/tp-rsa": "^1.1",
         "topthink/think-ide-helper": "^1.0",
         "topthink/think-swoole": "^3.0",
